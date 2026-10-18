@@ -23,12 +23,18 @@ function renderGame() {
 function startGame() {
   if (sum < 21) {
     message = "Do you want another Card?";
+    newCardEl.disabled = false;
+
   } else if (sum === 21) {
     message = "You've have a Blackjack!";
     hasBlackjack = true;
+    newCardEl.disabled = true;
+
   } else {
     message = "you are out of the game!";
     isAlive = false;
+    newCardEl.disabled = true;
+
   }
   cardsEl.textContent = "Cards: " + cards 
   sumEl.textContent = "Sum: " + sum;
@@ -82,3 +88,4 @@ console.log("Cards: ",cards);
 //console.log("Check3: sum before iteration = ", sum);
 console.log(sum);
 renderGame();
+
